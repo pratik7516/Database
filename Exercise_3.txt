@@ -1,0 +1,15 @@
+select upper(sname) from salespeople;
+
+select lower(sname) from salespeople;
+
+select lpad(sname,25,' ')from salespeople;
+
+select replace(sname,'la','ro') from salespeople;
+
+select * from salespeoplee where soundex(sname)=soundex('BLOKE');
+
+select replace(sname,'ro','ro') from salespeople;
+
+select length(sname) from salespeople;
+
+SELECT CURDATE();
