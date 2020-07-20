@@ -1,0 +1,13 @@
+1.select * from orders where amt>1000;
+
+2.select sname,city from salespeople where city='London' and comm>.10;
+
+3.select * from customers where rating>100 or city='rome';
+
+4.select * from orders where(amt<1000 or not(odate='1990-10-03'and amt>=1500));
+
+5.select * from orders where NOT((odate='1990-10-03'or snum>1006)and amt>=1500);
+
+6.select * from salespeople where comm between 0.12 and 0.14;
+
+6.select city,pname from parts order by cit,pname;

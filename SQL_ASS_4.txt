@@ -1,0 +1,20 @@
+show databases;
+
+use cdac;
+
+show tables;
+
+desc orders;
+
+   select * from orders;
+
+1) 
+select onum,amt,odate from orders;
+
+2) select * from customers where snum=1001;
+
+3) select city,sname,snum,comm from salespeople;
+
+4) select rating from customers where city='San Jose';
+
+5) select distinct snum,onum from salespeople order by snum;

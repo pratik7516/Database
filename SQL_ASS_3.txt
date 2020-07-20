@@ -1,0 +1,8 @@
+1) Does ANSI recognize the data type DATE?
+
+Ans :- 	Yes
+
+
+2) Which subdivision of SQL is used to put values in tables?
+
+Ans :-	Insert Command (insert into values)

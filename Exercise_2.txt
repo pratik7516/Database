@@ -1,0 +1,36 @@
+show databases;
+use exercise;
+show tables;
+select * from j;
+select * from p;
+select * from spj;
+select * from s;
+#----------------Q 1 ------------------------
+
+select * from s order by city desc;
+
+#---------------Q 2 ------------------------
+
+select * from p order by city asc , pname asc;
+
+#--------------Q 3 --------------------------
+
+select * from s where status between 10 and 20;
+
+#-------------Q 4 -----------------------------
+select * from p;
+select pname, weight from p where weight NOT between 10 and 15;
+
+
+#------------Q 5 ------------------------------
+
+select * from p where pname like 's%';
+
+#-----------Q 6 -------------------------------
+select * from s;
+select * from s where city like 'l%';
+
+#-----------Q 7 --------------------------------
+
+select * from j;
+select * from j where jname like '__n%';

@@ -1,0 +1,149 @@
+create database exercise;
+
+use exercise;
+
+create table semp (
+empno char(4),
+empname char(20),
+basic float(9,2),
+deptno char(2),
+depthead char(4)
+);
+
+create table sdept (
+deptno char(2),
+deptname char(15)
+);
+
+insert into sdept values(10,'Development');
+
+insert into sdept values(20,'Training');
+
+select * from sdept;
+
+
+insert into semp(empno,empname,basic,deptno) values(0001,'Sunil',6000,10);
+
+
+
+insert into semp(Empno,Empname,basic,deptno) values(0002,'Hiren',8000,20);
+
+insert into semp values(0003,'Ali',4000,10,0001);
+
+insert into semp(empno,empname,basic,depthead) values(0004,'Geroge',6000,0002);
+
+select * from semp;
+
+create table S 
+(`S#` char(2),
+Sname char(20),
+   Staus int(2),
+   City char(10)
+);
+
+
+
+create table P
+(`P#` char(2),
+ Pname char(20),
+    Color char(10),
+    Weight int(3),
+    City char(10)
+);
+
+ 
+
+create table P
+(`J#` char(2),
+Jname char(20),
+   City char(10)
+);
+
+
+
+
+insert into s values
+('s1','john',10,'London'),
+('s3','sunny',30,'delhi'),
+('s4','monty',20,'paris'),
+('s5','lamda',50,'athens');
+
+
+insert into p values
+('p1','keyboard','black',30,'delhi'),
+('p2','mouse','blue',20,'mumbai'),
+('p3','ram','black',5,'goa');
+
+insert into j values
+('j1','abc','delhi'),
+('j2','pqr','mumbai'),
+('j3','xyz','goa'),
+('j4','lmn','athens'),
+('j5','efg','paris');
+
+
+
+insert into spj values
+('s1','p2','j1',10),
+('s2','p1','j3',15),
+('s3','p3','j2',5);
+
+insert into p values('p4','scanner','white',20,'london');
+
+---------------------------------------------------------------------------------------------------------------
+
+5. Display all the data from the S table.     
+
+select * from s;
+
+
+ 6. Display only the S# and SNAME fields from the S table.     
+
+select `s#`, sname from s;
+
+
+ 7. Display the PNAME and COLOR from the P table for the CITY=”London”.     
+
+select pname, color from p where city='london';
+
+
+ 8. Display all the Suppliers from London.   
+
+select * from s where city='london';
+
+
+  9. Display all the Suppliers from Paris or Athens.      
+
+select * from s where city='london' or city='athens';
+
+
+10. Display all the Projects in Athens.     
+
+select * from j where city='athens';
+
+
+ 11. Display all the Partnames with the weight between 12 and 14 (inclusive of both).     
+
+select * from p where weight between 12 and 14;
+
+
+ 12. Display all the Suppliers with a Status greater than or equal to 20.      
+
+select * from s where status >=20;
+
+
+13. Display all the Suppliers except the Suppliers from London.     
+
+select * from s  where city != 'london';
+
+
+ 14. Display only the Cities from where the Suppliers come from.  
+
+select city from s;
+
+
+15. Assuming that the Part Weight is in GRAMS, 
+display the same in MILLIGRAMS and KILOGRAMS
+
+
+select weight  'grams' , weight/1000 'milligrams', weight*1000 'kilograms' from p;
