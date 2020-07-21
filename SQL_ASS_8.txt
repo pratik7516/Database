@@ -1,0 +1,7 @@
+1->select onum,snum,amt,(amt*12)/100 commision from orders;
+
+2->select onum,snum,amt,(amt*12)/100 commision from orders;
+
+3->select rating,cname,snum from customers order by rating desc;
+
+4->select count(odate) "Total orders",odate from orders group by odate order by "Total orders";
