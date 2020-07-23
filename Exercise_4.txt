@@ -1,0 +1,34 @@
+1.select min(status) from s;
+
+2.select max(weight) from p;
+
+3.select avg(weight) from p;  
+
+4.select sum(qty) from spj where `p#`='p1';  
+
+5.insert into spj values ('s4', 'p1', 'j2', '10');   
+
+6.select `p#`, avg(qty) from spj group by  `p#`; 
+
+7.select `p#`, max(qty) from spj where qty > 8 group by `p#`;
+
+8.select status, count(`s#`) from s  group by status;
+
+9.insert into j values ('j6', 'tab', 'mumbai');
+
+10.select city, count(`j#`) 'count of projects' from j group by city;
+
+
+		1)COUNT(Status) evaluates the expression for each row in a set and returns the number of rows having a non-null values.;
+	
+		2)COUNT(*) counts the number of items in a set. It includes NULL and duplicate values.
+		  It returns total number of rows in the table.
+
+11.	select case when status=10 then 'Ten'
+ 	when status=20 then 'Twenty'
+ 	when status=30 then 'Thirty'
+ 	when status=40 then 'Forty'
+ 	when status=50 then 'Fifty'
+ 	end as 'statuss', count(sname) 'count'
+ 	from s group by status
+ 	order by status;
