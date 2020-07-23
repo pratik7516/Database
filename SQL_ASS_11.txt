@@ -1,0 +1,5 @@
+1.select onum 'all orders', cnum from orders where cnum = (select cnum from customers where cname = 'cisneros');
+
+2.select distinct cname, rating from customers, orders where orders.cnum=customers.cnum and amt > (select avg(amt) from orders );
+
+3.select sum(amt) from orders group by snum having sum(amt) > (select max(amt) from orders);

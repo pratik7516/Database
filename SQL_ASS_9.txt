@@ -1,0 +1,10 @@
+1.select orders.onum, customers.cname from customers, orders where customers.cnum = orders.cnum;
+
+2.select salespeople.sname, customers.cname, orders.onum from customers, orders, salespeople 
+  where customers.snum = orders.snum  and orders.snum = salespeople.snum;
+
+3.select cname , sname, comm*100 'comm' from customers, salespeople 
+  where comm > 0.12 and customers.snum = salespeople.snum;
+
+4.select amt, comm from customers, orders, salespeople 
+  where  rating > 100 and customers.snum = orders.snum  and orders.snum = salespeople.snum;
