@@ -1,0 +1,14 @@
+1)select * from customers 
+	where rating >= any(select rating from customers
+			where snum in (select snum from salespeople where sname = 'serres'));
+
+
+2)select snum from salespeople where (snum, city) not in(select snum, city from customers);
+
+3)select * from orders 
+	where amt >any ( select amt from orders
+		where cnum in ( select cnum from customers where city = 'london'));
+        
+4)select max(amt) from orders where cnum in (select cnum from customers where city = 'london');
+
+ 	2.select min(amt) from orders where cnum in (select cnum from customers where city = 'london');
