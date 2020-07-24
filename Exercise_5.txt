@@ -1,0 +1,26 @@
+1)  select * from orders where Amt > 1000;
+
+
+
+2) select sname, city from salespeople where city = 'london' and comm > .10;
+
+
+3) select * from customers  where rating <= 100 or city = 'rome';
+
+
+
+4) what will be the output from the following query? 
+   Select * from Orders  
+   where (amt < 1000 OR 
+   NOT (odate = '1990-10-03'  
+   AND cnum > 2003));
+
+5) What will be the output of the following query?                 
+   Select * from Orders    
+   where NOT ((odate ='1990-10-03' OR snum    >1006) AND amt >= 1500);
+
+6)      Select snum, sname, city, comm From Salespeople   
+        where (comm > .12 OR comm <.14); 
+	Select * From Salespeople; 
+	      
+    
