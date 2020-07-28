@@ -1,0 +1,19 @@
+1)  create table order1
+    (
+    onum int(4), cnum int(4), snum int(4), odate date not null, 
+    constraint pk_o primary key (onum, cnum, snum )
+    );
+
+2)  ->create table salespeople1 (
+    snum int(4) primary key, comm float (4) default 0.10 not null, sname varchar(20) check(substr(upper(sname),1,1) between 'A' and 'M')
+    );
+
+    ->desc salespeople1;
+
+     ->insert into salespeople1 (snum,sname) values (10,'A');
+       select * from salespeople1;
+
+
+3)   ->create table order2 (
+       onum int(4) not null, cnum int(4) not null, snum int(4) not null, constraint on_cn_sn check(onum > cnum and cnum > snum)
+       );

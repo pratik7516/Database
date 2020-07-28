@@ -1,0 +1,14 @@
+1)  ->create table cityorders as 
+    ->select onum ,amt,orders.snum,customers.cnum,city from orders,customers where orders.cnum= customers.cnum;
+    
+    ->Alter table cityorders add primary key(onum),ADD CONSTRAINT onum_fk FOREIGN key(onum) REFERENCES orders(onum);
+
+ 
+2) ->create table order3 as select * from orders;
+    
+   ->alter table order3 add column prev int;
+
+   ->desc order3;
+  
+   ->ALTER TABLE order3 ADD constraint prev_fk FOREIGN key(prev) REFERENCES orders(onum);
+

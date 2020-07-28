@@ -1,0 +1,12 @@
+ 1)create table Multicust as select * from salespeople
+	where snum in (select snum from customers group by snum having count(snum) > 1);
+	->desc multicust;
+	->select * from multicust;
+
+
+2)->savepoint o1;
+  ->delete from customers where cnum NOT IN(select tempp.cnum from (select cnum from orders ) as tempp );
+
+
+3)->savepoint s1;
+  ->update salespeople set comm = comm*0.20 where snum in (select snum from orders where amt > 3000);

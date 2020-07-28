@@ -1,0 +1,12 @@
+ 
+1)->create index order_index on orders(odate);
+     
+   ->show indexes from orders;
+
+2)alter table orders ADD PRIMARY KEY(onum);
+
+
+3)create index s_date on orders(odate);
+
+
+4)alter table customers ADD PRIMARY KEY(rating);
