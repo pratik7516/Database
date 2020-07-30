@@ -1,0 +1,19 @@
+
+1)create view vc as select * from customers where rating = (select max(rating) from customers);
+
+show full tables;
+select * from vc; 
+
+2)create view vs as select city, count(city) from salespeople group by city;
+
+select * from vs;
+
+
+3)create view vavg as select distinct sname, avg(amt), count(onum) from salespeople natural join orders group by sname;
+
+select * from vavg;
+ 
+
+4)create view vmc as select sname, cname from salespeople natural join customers order by sname;
+
+select * from vmc;

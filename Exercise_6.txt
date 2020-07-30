@@ -1,0 +1,21 @@
+1)select * from s where status in (select status from s where sname = 'monty');
+
+2)select empname from semp where deptno in  (select deptno from semp where empname = 'ali');
+
+3)select pname, weight from p where weight > (select max(weight) from p where color = 'blue' );
+
+4)select * from j where city in (select city from j where jname = 'tab');
+
+5)select pname, weight from p where weight < (select weight from p where color = 'white'); 
+
+6)select sname, qty from spj join s using (`s#`) where qty = (select max(qty) from spj);
+   
+7)select empname from semp where basic = (select min(basic) from semp);
+  
+8)select sname, max(qty) from s,spj where s.`s#`=spj.`s#` group by qty order by qty desc limit 1;
+ 
+
+9)select distinct deptname from semp ,sdept
+    where semp.deptno = (select maxno.deptno from 
+    (select temp.deptno, max(temp.no ) 
+    from (select deptno,count(empno) no from semp group by deptno) as temp) as maxno) and semp.deptno = sdept.deptno;
