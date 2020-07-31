@@ -1,0 +1,22 @@
+1)GRANT UPDATE ON customers TO Amit;
+
+
+2)GRANT SELECT ON orders TO Manoj WITH GRANT OPTION;
+
+  GRANT SELECT ON Manoj.orders TO Seema;
+
+3)REVOKE INSERT ON salespeople FROM Ajita;
+
+4)CREATE OR REPLACE VIEW RANGE AS
+	(SELECT * FROM customers
+	WHERE rating BETWEEN 100 AND 500);
+
+GRANT UPDATE ON range100 TO Abhijeet;
+
+
+5)CREATE OR REPLACE VIEW RESTRICTMIN AS
+	SELECT * FROM customers
+	WHERE rating NOT IN
+    	(SELECT min(rating) FROM customers);
+ 
+ GRANT SELECT ON RESTRICTMIN TO Vikaram;

@@ -1,0 +1,55 @@
+1)Create View Dailyorders as Select Distinct cnum, snum, onum, odate from Orders; 
+
+-- Works without any errors
+ create view DAILYORDERS as
+select distinct Cnum,Snum,Onum,Odate from ORDERS;
+
+2)Create View Custotals as Select cname, Sum (amt) Sum_Amt from Orders, Customers   where Orders.cnum=Customers.cnum  Group by cname;  
+
+-- Showed Errors.
+create view Custotals as
+select Cnum,Snum(AMT) Sum_AMT from ORDERS,CUSTOMERS
+where Orders.Cnum=CUSTOMERS.Cnum
+group by Cnum;
+
+3)Create view Thirdorders as Select * from Dailyorders  where odate=’1990-10-03’;  
+
+-- Showed Errors
+create view Thirdorders as
+select * from DAILYORDERS
+where Odate='1990-10-03';
+
+4)Create view Nullcities  as Select snum, sname, city  from Salespeople  where city is NULL   OR sname BETWEEN ‘A’ and ‘MZ’;  
+
+-- Worked with no errors
+create view Nullcities as
+select Snum,Sname,city from SALESPEOPLE
+where City is NULL Or Sname between 'A' and 'MZ';
+
+
+2)create view commissions as select snum, comm from salespeople where comm between 0.10 and 0.20;
+
+select * from commissions;
+
+3)create table ORDERS_D3
+(
+  Onum int(5),
+  AMT float(5,2),
+  Odate date default(SYSDATE())
+);
+
+show tables;
+
+insert into ORDERS_D3 (Onum,AMT)
+values (01,2);
+
+select * from ORDERS_D3;
+
+create view ENTRY_ORDERS as
+select * from ORDERS_D3
+where Onum in
+(select Onum_Temp from
+(select Onum Onum_Temp from ORDERS_D3) AS Temp)
+with check option;
+
+alter table ORDERS_D3 add primary key (Onum);
